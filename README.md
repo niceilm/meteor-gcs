@@ -1,11 +1,20 @@
 meteor gcs - google cloud storage uploader
 ----
 
+# Install
+## meteor
 ```
 meteor add flynn:gcs
 ```
+## typings
+```
+typings install meteor-gcs=github:niceilm/meteor-gcs/index.d.ts#bb8a30e683d85a569b390d9154ab5205424e8939 --global --save
+```
 
-## example
+```
+```
+
+# Server
 ```
 import { WebApp } from 'meteor/webapp';
 import { GCSOptions, GoogleCloudStorage } from 'meteor/flynn:gcs';
