@@ -12,7 +12,7 @@ declare module 'meteor/flynn:gcs' {
   interface GCSOptions {
     projectId: string;
     credentials: Object;
-    bucketId: string
+    bucketId: string;
   }
 
   class GoogleCloudStorage {
@@ -20,9 +20,7 @@ declare module 'meteor/flynn:gcs' {
 
     private uploadByBuffer(buffer: any, options: GCSUploadOptions): any;
 
-    public aclDefaultAdd(): void;
-
-    public uploadByRequest(req: any): string;
+    public uploadByRequest(req: any, res: any): string;
 
     public deleteFile(imageUrl: string): void;
   }

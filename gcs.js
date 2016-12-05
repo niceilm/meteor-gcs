@@ -4,7 +4,7 @@
 import {Meteor} from "meteor/meteor";
 
 
-class GoogleCloudStorage {
+export class GoogleCloudStorage {
   bucketId;
   bucket;
   gcs;
@@ -25,15 +25,8 @@ class GoogleCloudStorage {
     }).single('file'));
   }
 
-  aclDefaultAdd() {
-    Meteor.wrapAsync(this.bucket.acl.default.methodBoardAdd, this.bucket.acl.default)({
-      entity: 'allUsers',
-      role: this.gcs.acl.READER_ROLE
-    });
-  }
-
-  uploadByRequest(req) {
-    this.multerUploader(req);
+  uploadByRequest(req, res) {
+    this.multerUploader(req, res);
     if (!req.file) {
       return;
     }
